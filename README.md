@@ -1,2 +1,2 @@
 # MusicRecs
-This repository contains the Flask app for MusicRecs - a service to recommend similar songs to users
+This repository contains the Flask app for MusicRecs - a service to recommend similar songs to users. You can find the deployed version of the app at [MusicRecs](https://musicrecs.onrender.com/).
