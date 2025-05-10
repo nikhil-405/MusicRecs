@@ -97,7 +97,7 @@ CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
 CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
 app.secret_key = os.getenv("FLASK_SECRET_KEY")
 
-REDIRECT_URI = 'http://127.0.0.1:7000/callback' #TODO: Change this at the time of deployment
+REDIRECT_URI = 'https://musicrecs-ouce.onrender.com/callback' #TODO: Change this at the time of deployment
 AUTH_URL = 'https://accounts.spotify.com/authorize'
 TOKEN_URL = 'https://accounts.spotify.com/api/token'
 API_BASE_URL = 'https://api.spotify.com/v1/'
