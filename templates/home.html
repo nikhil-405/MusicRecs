@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin-top: -50px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+
+    <div class="container content-container">
+        <h1>Welcome to the Spotify song recommender website</h1>
+        <!-- <p>You can access the search functionality from the Navbar</p> -->
+
+        <!-- <p>Please select one of the following tasks:</p> -->
+        <a href="/login" class="button">Login with Spotify</a>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock %}
+{% block content %}
+  <div class="text-center mt-5">
+    <form method="POST" action="/search">
+      <div class="form-group">
+        <label for="songName"><i data-lucide="search"></i>Enter song that you want recommendations for:</label>
+        <input type="text" class="form-control w-75 mx-auto" id="songName" name="song_name" placeholder="Song name" required>
+      </div>
+      <button type="submit" class="btn btn-accent"><i data-lucide="search"></i> Search</button>
+    </form>
+  </div>
+{% endblock %}
