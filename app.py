@@ -97,11 +97,12 @@ CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
 CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
 app.secret_key = os.getenv("FLASK_SECRET_KEY")
 
-REDIRECT_URI = 'https://musicrecs-ouce.onrender.com/callback' #TODO: Change this at the time of deployment
+REDIRECT_URI = 'https://musicrecs-ouce.onrender.com/callback'
 AUTH_URL = 'https://accounts.spotify.com/authorize'
 TOKEN_URL = 'https://accounts.spotify.com/api/token'
 API_BASE_URL = 'https://api.spotify.com/v1/'
-# scope = 'user-read-private, user-read-email'
+#TODO: Change scope to accomodate user history and other data in the future 
+# scope = 'user-read-private, user-read-email' 
 
 # Defining app routes for the Flask apps
 @app.route('/')
@@ -215,18 +216,6 @@ def recommend():
 
         return render_template("recommendations.html", tracks = tracks_info)
 
-
-# @app.route("/search_confirm", methods = ["GET", "POST"])
-# def search_confirm():
-#     song_name = request.args.get('song_name')
-#     access_token = flask_session.get('access_token')
-#     if access_token:
-#         sp = Spotify(auth=access_token)
-#         tracks_data = search_spotify(sp, song_name)
-#         return render_template("confirm.html", tracks=tracks_data, song_name=song_name)
-#     else:
-#         return redirect("/refresh-token")
-
 @app.route("/refresh-token")
 def refresh_token():
     try:
@@ -249,4 +238,5 @@ def refresh_token():
 
 # Launching the Flask app
 if __name__ == "__main__":
-    app.run(host = "0.0.0.0", port = int(os.environ.get("PORT", 5000)), debug = False)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host = "0.0.0.0", port = port, debug = False)
