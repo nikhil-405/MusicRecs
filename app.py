@@ -101,7 +101,7 @@ REDIRECT_URI = 'https://musicrecs-ouce.onrender.com/callback' #TODO: Change this
 AUTH_URL = 'https://accounts.spotify.com/authorize'
 TOKEN_URL = 'https://accounts.spotify.com/api/token'
 API_BASE_URL = 'https://api.spotify.com/v1/'
-scope = 'user-read-private, user-read-email'
+# scope = 'user-read-private, user-read-email'
 
 # Defining app routes for the Flask apps
 @app.route('/')
@@ -110,13 +110,13 @@ def home():
 
 @app.route('/login')
 def login():
-    scope = 'user-read-private user-read-email user-top-read'
+    # scope = 'user-read-private user-read-email user-top-read'
     params = {
         'client_id': CLIENT_ID,
         # 'client_secret': CLIENT_SECRET,
         'response_type': 'code',
-        'redirect_uri': REDIRECT_URI,
-        'scope': scope
+        'redirect_uri': REDIRECT_URI
+        # 'scope': scope
     }
 
     auth_url = f'{AUTH_URL}?{urllib.parse.urlencode(params)}'
