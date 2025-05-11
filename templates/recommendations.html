@@ -1,5 +1,26 @@
 {% extends "base.html" %}
+
 {% block title %}Recommendations{% endblock %}
+
+{% block styles %}
+<style>
+  .btn-accent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-accent i.spotify-icon {
+    margin-left: 0.5em;
+    filter: invert(var(--icon-invert, 0));
+  }
+  
+  /* Invert text */
+  [data-theme="dark"] {
+    --icon-invert: 1;
+  }
+</style>
+{% endblock %}
+
 {% block content %}
   <div class="text-center mt-5">
     <h1><i data-lucide="star"></i> Your Recommendations</h1>
@@ -7,23 +28,27 @@
   <div class="row mt-4">
     {% for track in tracks %}
     <div class="col-6 col-md-4 col-lg-3 mb-4">
-        <div class="card h-100 shadow-sm">
+      <div class="card h-100 shadow-sm">
         <a href="{{ track.link }}" target="_blank">
-            <img src="{{ track.image_url }}" class="card-img-top" alt="{{ track.name }}">
+          <img src="{{ track.image_url }}" class="card-img-top" alt="{{ track.name }}">
         </a>
         <div class="card-body d-flex flex-column">
-            <h5 class="card-title"><i data-lucide="music"></i> {{ track.name }}</h5>
-            <p class="card-text text-muted"><i data-lucide="user"></i> {{ track.artist }}</p>
-            <a href="{{ track.link }}" target="_blank" class="btn btn-outline-accent mt-auto d-flex align-items-center gap-1">
-            Listen on <i class="bi bi-spotify" aria-hidden="true"></i>
-            </a>
+          <h5 class="card-title"><i data-lucide="music"></i> {{ track.name }}</h5>
+          <p class="card-text text-muted"><i data-lucide="user"></i> {{ track.artist }}</p>
+          <a href="{{ track.link }}"
+             target="_blank"
+             class="btn btn-outline-accent mt-auto btn-accent">
+            Listen on
+            <i class="bi bi-spotify spotify-icon" aria-hidden="true"></i>
+          </a>
         </div>
-        </div>
+      </div>
     </div>
     {% endfor %}
-
   </div>
   <div class="text-center mt-4">
-    <a href="/search" class="btn btn-secondary"><i data-lucide="refresh-cw"></i> Search Again</a>
+    <a href="/search" class="btn btn-secondary">
+      <i data-lucide="refresh-cw"></i> Search Again
+    </a>
   </div>
 {% endblock %}
