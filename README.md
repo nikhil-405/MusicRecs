@@ -1,6 +1,6 @@
 # MusicRecs
 
-MusicRecs is a Flask-based web service that recommends songs similar to any track you like, leveraging the Spotify API under the hood. You can try it live at [MusicRecs](https://musicrecs.onrender.com/).
+MusicRecs is a Flask-based web service that recommends songs similar to any track you like, leveraging the Spotify API under the hood. You can try it at [MusicRecs](https://musicrecs-ouce.onrender.com/).
 
 > **Note:** On Render’s free tier the service may take **up to 60 seconds** to cold-start after each deploy or period of inactivity.
 
