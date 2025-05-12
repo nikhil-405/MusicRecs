@@ -35,7 +35,7 @@ MusicRecs is a Flask-based web service that recommends songs similar to any trac
 ![MusicRecs Screenshot](docs/musicrecs-demo.png)  
 *Search for “Daft Punk” and get back similar tracks!*
 
-Live version: [MusicRecs](https://musicrecs.onrender.com/)
+Live version: [MusicRecs](https://musicrecs-ouce.onrender.com/)
 
 ---
 
